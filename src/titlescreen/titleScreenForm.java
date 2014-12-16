@@ -88,21 +88,24 @@ public class titleScreenForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BubbleGameButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BubbleGameButtonMouseClicked
+        this.setVisible(false);
+        BubbleFractionsForm bub = new BubbleFractionsForm();
+        bub.setVisible(true);
         System.out.println("Pressed");
     }//GEN-LAST:event_BubbleGameButtonMouseClicked
 
     private void brickGameButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brickGameButtonMouseClicked
         this.setVisible(false);
-        BrickGameForm b = new BrickGameForm();
-        b.setVisible(true);
+        BrickGameForm bri = new BrickGameForm();
+        bri.setVisible(true);
         
         System.out.println("Pressed");
     }//GEN-LAST:event_brickGameButtonMouseClicked
 
     private void orderingGameLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderingGameLabelMouseClicked
         this.setVisible(false);
-        OrderingGameForm o = new OrderingGameForm();
-        o.setVisible(true);
+        OrderingGameForm ord = new OrderingGameForm();
+        ord.setVisible(true);
         
         System.out.println("Pressed");
     }//GEN-LAST:event_orderingGameLabelMouseClicked
