@@ -73,7 +73,7 @@ public class titleScreenForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(teamsButton);
-        teamsButton.setBounds(427, 370, 150, 23);
+        teamsButton.setBounds(427, 370, 150, 29);
 
         titleLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         titleLabel.setText("Welcome to Fraction Interaction!");
