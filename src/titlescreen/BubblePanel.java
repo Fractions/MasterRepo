@@ -16,13 +16,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 public class BubblePanel extends JPanel{
     Random gen = new Random();
     Font font1 = new Font("Broadway", Font.BOLD, 30);
     Font font2 = new Font("Broadway", Font.BOLD, 25);
+    Font font3 = new Font("Arial", Font.BOLD, 25);
     
     JButton startButton = new JButton();
+    JLabel scoreLabel;
+    JLabel backButton;
+    int score = 0;
     
     BufferedImage startScreen;
     boolean onStart = false;
@@ -43,8 +48,25 @@ public class BubblePanel extends JPanel{
     
     boolean firstMade = false;
     
+     String currentPath;
+            
+        
+          
+    
     public BubblePanel(){
+        
+        File currentDirectory = new File(new File(".").getAbsolutePath());
+    
+    
+        try {
+               currentPath = currentDirectory.getCanonicalPath();
+          } catch (IOException ex) {
+              Logger.getLogger(BrickGameForm.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+        
         this.setLayout(null);
+        Color maroon = new Color(195, 65, 99);
+        this.setBackground(maroon);
         try {
             startScreen = ImageIO.read(this.getClass().getResource("/resources/start background.jpg"));
             //this.add(startScreen);
@@ -52,6 +74,7 @@ public class BubblePanel extends JPanel{
             Logger.getLogger(BubblePanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         onStart = true;
+        
         addButton();
     }
     
@@ -70,6 +93,26 @@ public class BubblePanel extends JPanel{
             });
     }
     
+    public void addBackButton(){
+        System.out.println(currentPath);
+        backButton = new JLabel();
+        backButton.setVisible(true);
+        backButton.setText("");
+        ImageIcon backButtonImage = new ImageIcon(currentPath+"/src/resources/back.png");
+        backButton.setIcon(backButtonImage);
+        backButton.setBounds(0,50,70,43);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+                    public void mousePressed(java.awt.event.MouseEvent evt){
+                        
+        
+        System.out.println("Pressed");
+                    }
+                });        
+        this.add(backButton);
+    }
+    
+    
+    
     public void startGame(){
         this.remove(startButton);
         onStart = false;
@@ -77,6 +120,8 @@ public class BubblePanel extends JPanel{
         readFile();
         newQuestion();
         makeBubbles();
+        addScore();
+        addBackButton();
         firstMade = true;
         
         cb = new Clipboard();
@@ -84,6 +129,17 @@ public class BubblePanel extends JPanel{
         this.setLayout(null);
         changeBubble();
         startElf();
+    }
+    
+    public void addScore(){
+        scoreLabel = new JLabel();
+        scoreLabel.setVisible(true);
+        scoreLabel.setBorder(new LineBorder(Color.BLACK,1));
+        scoreLabel.setFont(font3);
+        scoreLabel.setText("Score: "+score);
+        scoreLabel.setBounds(1080, 585, 200, 50);
+        scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        this.add(scoreLabel);
     }
     
     public void readFile(){
@@ -214,6 +270,13 @@ public class BubblePanel extends JPanel{
                 repaint();
             }
         }
+    }
+    
+    public void backButtonClick(){
+        //BubbleFractionsForm.setVisible(false);
+        titleScreenForm title = new titleScreenForm();
+        
+        title.setVisible(true);
     }
     
     public void paintComponent(Graphics g){
