@@ -129,7 +129,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(inOrder);
-        inOrder.setBounds(480, 350, 81, 29);
+        inOrder.setBounds(480, 350, 61, 23);
 
         nextQuestionButton.setText("Next Question");
         nextQuestionButton.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nextQuestionButton);
-        nextQuestionButton.setBounds(460, 350, 120, 29);
+        nextQuestionButton.setBounds(460, 350, 120, 23);
 
         newGameButton.setText("New Game");
         newGameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +147,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(newGameButton);
-        newGameButton.setBounds(470, 350, 97, 29);
+        newGameButton.setBounds(470, 350, 97, 23);
 
         goodJobLion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/smallLion.png"))); // NOI18N
         getContentPane().add(goodJobLion);

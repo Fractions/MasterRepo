@@ -103,10 +103,12 @@ public class BubblePanel extends JPanel{
         backButton.setBounds(0,50,70,43);
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mousePressed(java.awt.event.MouseEvent evt){
-                        
-        
-        System.out.println("Pressed");
+                     BubbleFractionsForm.back();
+                     titleScreenForm tit = new titleScreenForm();
+                    tit.setVisible(true);
                     }
+
+            
                 });        
         this.add(backButton);
     }
