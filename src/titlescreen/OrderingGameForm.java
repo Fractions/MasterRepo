@@ -23,7 +23,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
     public OrderingGameForm() {
         initComponents();
         
-        
+        //Set All Extra Buttons and Graphics to invisible
         nextQuestionButton.setVisible(false);
         newGameButton.setVisible(false);
         goodJobLion.setVisible(false);
@@ -31,18 +31,24 @@ public class OrderingGameForm extends javax.swing.JFrame {
         Random gen = new Random();
         int denominatorNumber = gen.nextInt(9)+4;
         
+        //Set the denominators to a random number higher than 4
         denominator1.setText(""+denominatorNumber);
         denominator2.setText(""+denominatorNumber);
         denominator3.setText(""+denominatorNumber);
         denominator4.setText(""+denominatorNumber);
         
+        //The range of numerator values
         int numeratorRange = denominatorNumber;
         
+        //Get random values
          numeratorNumber1 = gen.nextInt(numeratorRange)+1;
          numeratorNumber2 = gen.nextInt(numeratorRange)+1;
+         
+         //Ensure the values aren't the same
         while(numeratorNumber1 == numeratorNumber2){
             numeratorNumber2 = gen.nextInt(numeratorRange)+1;
         }
+        
          numeratorNumber3 = gen.nextInt(numeratorRange)+1;
         while((numeratorNumber1 == numeratorNumber2) || (numeratorNumber2 == numeratorNumber3) || (numeratorNumber1 == numeratorNumber3)){
             
@@ -53,10 +59,13 @@ public class OrderingGameForm extends javax.swing.JFrame {
          numeratorNumber4 = gen.nextInt(numeratorRange)+1;
         }
         
+        //Make sure they aren't already in order
         while((numeratorNumber1 < numeratorNumber2) && (numeratorNumber2 < numeratorNumber3) && (numeratorNumber3 < numeratorNumber4)){
         numeratorNumber4 = gen.nextInt(numeratorRange)+1;
         }
         
+        
+        //Set them to the labels
         numerator1.setText(""+numeratorNumber1);
         numerator2.setText(""+numeratorNumber2);
         numerator3.setText(""+numeratorNumber3);
@@ -129,7 +138,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(inOrder);
-        inOrder.setBounds(480, 350, 61, 23);
+        inOrder.setBounds(480, 350, 81, 29);
 
         nextQuestionButton.setText("Next Question");
         nextQuestionButton.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +147,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(nextQuestionButton);
-        nextQuestionButton.setBounds(460, 350, 120, 23);
+        nextQuestionButton.setBounds(460, 350, 120, 29);
 
         newGameButton.setText("New Game");
         newGameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +156,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(newGameButton);
-        newGameButton.setBounds(470, 350, 97, 23);
+        newGameButton.setBounds(470, 350, 97, 29);
 
         goodJobLion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/smallLion.png"))); // NOI18N
         getContentPane().add(goodJobLion);
@@ -312,6 +321,8 @@ public class OrderingGameForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rArrow2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rArrow2MouseClicked
+        //Move Numerator 2 to Numerator 3 position
+        
         int temp1 = numeratorNumber2;
         int temp2 = numeratorNumber3;
         numeratorNumber2 = temp2;
@@ -323,6 +334,8 @@ public class OrderingGameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_rArrow2MouseClicked
 
     private void lArrow2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lArrow2MouseClicked
+        //Move Numerator 2 to Numerator 1 position
+        
         int temp1 = numeratorNumber1;
         int temp2 = numeratorNumber2;
         numeratorNumber1 = temp2;
@@ -334,6 +347,8 @@ public class OrderingGameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lArrow2MouseClicked
 
     private void lArrow4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lArrow4MouseClicked
+         //Move Numerator 4 to Numerator 3 position
+        
         int temp1 = numeratorNumber3;
         int temp2 = numeratorNumber4;
         numeratorNumber3 = temp2;
@@ -345,6 +360,8 @@ public class OrderingGameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lArrow4MouseClicked
 
     private void rArrow1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rArrow1MouseClicked
+         //Move Numerator 1 to Numerator 2 position
+        
         int temp1 = numeratorNumber1;
         int temp2 = numeratorNumber2;
         numeratorNumber1 = temp2;
@@ -357,6 +374,8 @@ public class OrderingGameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_rArrow1MouseClicked
 
     private void lArrow3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lArrow3MouseClicked
+         //Move Numerator 2 to Numerator 1 position
+        
         int temp1 = numeratorNumber2;
         int temp2 = numeratorNumber3;
         numeratorNumber2 = temp2;
@@ -394,6 +413,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
     }//GEN-LAST:event_inOrderMouseClicked
 
     private void rArrow3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rArrow3MouseClicked
+         //Move Numerator 3 to Numerator 4 position
         int temp1 = numeratorNumber3;
         int temp2 = numeratorNumber4;
         numeratorNumber3 = temp2;

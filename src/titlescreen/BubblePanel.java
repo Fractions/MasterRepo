@@ -93,6 +93,8 @@ public class BubblePanel extends JPanel{
             });
     }
     
+    
+    
     public void addBackButton(){
         System.out.println(currentPath);
         backButton = new JLabel();
@@ -103,8 +105,8 @@ public class BubblePanel extends JPanel{
         backButton.setBounds(0,50,70,43);
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mousePressed(java.awt.event.MouseEvent evt){
-                     BubbleFractionsForm.back();
-                     titleScreenForm tit = new titleScreenForm();
+            //        BubbleFractionsForm.back();
+                    titleScreenForm tit = new titleScreenForm();
                     tit.setVisible(true);
                     }
 
@@ -161,7 +163,7 @@ public class BubblePanel extends JPanel{
             
             File f2 = new File("questions.txt");
             FileReader fr2 = new FileReader(f2);
-            BufferedReader br2 = new BufferedReader(fr2);
+            BufferedReader br2 = new  BufferedReader(fr2);
             
             for(int q = 0; q < length/6; q++){
                 question[q] = br2.readLine();

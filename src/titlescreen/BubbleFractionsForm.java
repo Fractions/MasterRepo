@@ -9,7 +9,7 @@ public class BubbleFractionsForm extends javax.swing.JFrame {
     }
     
     public void back(){
-       this.setVisible(false);
+        this.setVisible(false);
         titleScreenForm tit = new titleScreenForm();
         tit.setVisible(true);
    }
@@ -127,6 +127,7 @@ public class BubbleFractionsForm extends javax.swing.JFrame {
     private void splashScreenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_splashScreenMouseClicked
         splashScreen.setVisible(false);
         bubblePanel2.startGame();
+        
         System.out.println("Pressed");
     }//GEN-LAST:event_splashScreenMouseClicked
 
