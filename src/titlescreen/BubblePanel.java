@@ -50,7 +50,7 @@ public class BubblePanel extends JPanel{
     
      String currentPath;
             
-        
+    BubbleFractionsForm parent;    
           
     
     public BubblePanel(){
@@ -106,9 +106,8 @@ public class BubblePanel extends JPanel{
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
                     public void mousePressed(java.awt.event.MouseEvent evt){
                
-                    
-                    titleScreenForm tit = new titleScreenForm();
-                    tit.setVisible(true);
+                    // Deal with points here
+                    parent.back();
                     
                     
                     }
@@ -118,7 +117,13 @@ public class BubblePanel extends JPanel{
         this.add(backButton);
     }
     
-    
+    public BubbleFractionsForm getParent() {
+        return parent;
+    }
+
+    public void setParent(BubbleFractionsForm parent) {
+        this.parent = parent;
+    }
     
     public void startGame(){
         this.remove(startButton);
@@ -277,13 +282,6 @@ public class BubblePanel extends JPanel{
                 repaint();
             }
         }
-    }
-    
-    public void backButtonClick(){
-        //BubbleFractionsForm.setVisible(false);
-        titleScreenForm title = new titleScreenForm();
-        
-        title.setVisible(true);
     }
     
     public void paintComponent(Graphics g){

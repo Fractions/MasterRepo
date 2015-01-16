@@ -1,9 +1,13 @@
 package titlescreen;
 
+import javax.naming.Context;
+
 public class BubbleFractionsForm extends javax.swing.JFrame {
 
     public BubbleFractionsForm() {
         initComponents();
+        
+        bubblePanel2.setParent(this);
     }
     
     public void back(){
