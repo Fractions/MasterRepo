@@ -91,6 +91,7 @@ public class titleScreenForm extends javax.swing.JFrame {
         this.setVisible(false);
         BubbleFractionsForm bub = new BubbleFractionsForm();
         bub.setVisible(true);
+        
         System.out.println("Pressed");
     }//GEN-LAST:event_BubbleGameButtonMouseClicked
 
